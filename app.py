@@ -23,7 +23,7 @@ def process_coins():
 # Check transaction succesful
 
 def is_transaction_successful(money_received, drink_cost):
-    if money_received > drink_cost:
+    if money_received >= drink_cost:
         change = round(money_received - drink_cost, 2)
         if change > 0:
             print(f'Here is your {change}$')
@@ -38,10 +38,9 @@ def is_transaction_successful(money_received, drink_cost):
 def make_coffee(drink_name, order_ingredients):
     for item in order_ingredients:
         resources[item] -= order_ingredients[item]
-    print(f"Here is your {drink_name}, enjoy it!")
+    print(f"Here is your {drink_name} ☕, enjoy it!")
 
 flag = False
-
 while not flag:
     request = input('What would you like? (espresso/latte/cappuccino): ')
 
